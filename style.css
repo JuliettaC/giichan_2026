@@ -1,0 +1,116 @@
+/* --- Estilos Generales --- */
+body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Cambiado a min-height para mejor compatibilidad */
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #ffccdd; 
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cake-container {
+    display: flex;
+    flex-direction: column; /* Alinea torta y gato uno abajo del otro */
+    align-items: center;
+    width: 100%;
+}
+
+.cake-container img#vela-gif {
+    max-width: 500px; /* Evita que sea gigante */
+    width: 90%;      /* Se adapta a pantallas de celular */
+    height: auto;
+}
+
+#gato-container {
+    display: none; /* JS cambiará esto */
+    z-index: 5;    /* Asegura que esté al frente */
+}
+
+/* --- Botón del Micrófono --- */
+#btn-comenzar {
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: #ffccdd;
+    border: none;
+    border-radius: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#btn-comenzar:hover {
+    background-color: #e5b2ff;
+    transform: scale(1.05);
+}
+
+/* --- Animación para el Gato --- */
+#gato-container {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- VENTANA MODAL (LA CARTA) --- */
+.modal-overlay {
+    display: none; /* Se activa con JS */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+}
+
+.carta-imagen {
+    max-width: 100%;
+    max-height: 80vh;
+    height: auto;
+    border-radius: 10px;
+}
+
+#cerrar-carta {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 35px;
+    color: #ffccdd;
+    font-weight: bold;
+    line-height: 1;
+}
+
+#cerrar-carta:hover {
+    color: #e5b2ff;
+}
